@@ -1,0 +1,19 @@
+/* Wendle's styles: a dark night sky and a centered tower */
+body {
+  margin: 0;
+  padding: 12px;
+  background: #1d1b3a;
+  color: #f3e6c4;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+h1 { font-size: 1.4rem; margin: 6px 0; }
+.sub { margin: 0 0 10px; font-size: 0.9rem; opacity: 0.8; }
+canvas {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  background: #2b2850;
+  border-radius: 8px;
+  touch-action: none;
+}
