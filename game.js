@@ -1,4 +1,5 @@
 // Wendle's tower: drawing the rooms and cupboards first.
+// Note to self: 'top' is already a built-in name in browsers, so I use towerTop instead!
 const canvas = document.getElementById('tower');
 const ctx = canvas.getContext('2d');
 
@@ -11,14 +12,13 @@ const rooms = [
   { name: 'Cellar',  wall: '#3f4a5e', cups: [50, 140, 230] }
 ];
 
-const towerX = 30, towerW = 300, roomH = 120, top = 40;
+const towerX = 30, towerW = 300, roomH = 120, towerTop = 40;
 
 // Keep all cupboards in a list so later steps can test them with the key.
 const cupboards = [];
 
 function drawRoom(room, i) {
-  const y = top + i * roomH;
-  // wall
+  const y = towerTop + i * roomH;
   ctx.fillStyle = room.wall;
   ctx.fillRect(towerX, y, towerW, roomH);
   // brick lines for a stony feel
@@ -31,7 +31,7 @@ function drawRoom(room, i) {
   ctx.fillStyle = '#2a1f18';
   ctx.fillRect(towerX, y + roomH - 10, towerW, 10);
   // room name
-  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.fillStyle = 'rgba(255,255,255,0.75)';
   ctx.font = '12px Georgia';
   ctx.fillText(room.name, towerX + 8, y + 16);
   // cupboards sit on the floor
@@ -43,13 +43,12 @@ function drawRoom(room, i) {
 }
 
 function drawCupboard(c) {
-  // wooden body
   ctx.fillStyle = '#8a5a32';
   ctx.fillRect(c.x, c.y, c.w, c.h);
   ctx.strokeStyle = '#4a2c14';
   ctx.lineWidth = 3;
   ctx.strokeRect(c.x, c.y, c.w, c.h);
-  // two doors with a seam in the middle
+  // seam between the two doors
   ctx.lineWidth = 2;
   ctx.beginPath(); ctx.moveTo(c.x + c.w / 2, c.y); ctx.lineTo(c.x + c.w / 2, c.y + c.h); ctx.stroke();
   // little panels
@@ -67,9 +66,9 @@ function drawCupboard(c) {
 function drawRoof() {
   ctx.fillStyle = '#7a2e3a';
   ctx.beginPath();
-  ctx.moveTo(towerX - 14, top);
+  ctx.moveTo(towerX - 14, towerTop);
   ctx.lineTo(towerX + towerW / 2, 2);
-  ctx.lineTo(towerX + towerW + 14, top);
+  ctx.lineTo(towerX + towerW + 14, towerTop);
   ctx.closePath();
   ctx.fill();
 }
@@ -82,7 +81,7 @@ function draw() {
   // tower outline
   ctx.strokeStyle = '#1a1226';
   ctx.lineWidth = 4;
-  ctx.strokeRect(towerX, top, towerW, roomH * rooms.length);
+  ctx.strokeRect(towerX, towerTop, towerW, roomH * rooms.length);
 }
 
 draw();
