@@ -8,7 +8,8 @@ body {
   text-align: center;
 }
 h1 { font-size: 1.4rem; margin: 6px 0; }
-.sub { margin: 0 0 10px; font-size: 0.9rem; opacity: 0.8; }
+.sub { margin: 0 0 10px; font-size: 0.9rem; opacity: 0.85; }
+.how { margin: 10px auto; max-width: 360px; font-size: 0.9rem; }
 canvas {
   width: 100%;
   max-width: 360px;
