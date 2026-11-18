@@ -1,20 +1,25 @@
 /* Wendle's styles: a dark night sky and a centered tower */
 body {
   margin: 0;
-  padding: 12px;
+  padding: 8px;
   background: #1d1b3a;
   color: #f3e6c4;
   font-family: Georgia, serif;
   text-align: center;
 }
-h1 { font-size: 1.4rem; margin: 6px 0; }
-.sub { margin: 0 0 10px; font-size: 0.9rem; opacity: 0.85; }
-.how { margin: 10px auto; max-width: 360px; font-size: 0.9rem; }
+h1 { font-size: 1.2rem; margin: 4px 0; }
+.sub { margin: 0 0 6px; font-size: 0.85rem; opacity: 0.85; }
+.how { margin: 8px auto; max-width: 360px; font-size: 0.85rem; }
 canvas {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  /* keep the whole tower on screen, leaving room for the text */
+  max-height: calc(100vh - 120px);
+  aspect-ratio: 360 / 600;
   background: #2b2850;
   border-radius: 8px;
   touch-action: none;
+  cursor: none;
 }
