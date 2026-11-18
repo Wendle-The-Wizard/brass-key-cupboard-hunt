@@ -10,12 +10,22 @@ body {
 h1 { font-size: 1.2rem; margin: 4px 0; }
 .sub { margin: 0 0 6px; font-size: 0.85rem; opacity: 0.85; }
 .how { margin: 8px auto; max-width: 360px; font-size: 0.85rem; min-height: 2.4em; }
+button {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  background: #e8b93f;
+  color: #2a1a08;
+  border: 2px solid #7a5a10;
+  border-radius: 8px;
+}
+button[hidden] { display: none; }
 canvas {
   display: block;
   margin: 0 auto;
   width: auto;
   max-width: 100%;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 170px);
   aspect-ratio: 360 / 600;
   background: #2b2850;
   border-radius: 8px;
